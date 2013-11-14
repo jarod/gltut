@@ -23,6 +23,7 @@ add_subdirectory(glsdk)
 include_directories(
 ${glload_SOURCE_DIR}/include
 ${glutil_SOURCE_DIR}/include
+${glimg_SOURCE_DIR}/include
 ${OPENGL_INCLUDE_DIRS}
 ${GLFW_INCLUDE_DIRS}
 )
@@ -31,9 +32,16 @@ set(LIBS
 ${OPENGL_LIBRARIES}
 glload
 glutil
+glimg
 ${GLFW_STATIC_LIBRARIES}
 )
+
+add_subdirectory(framework)
+
+set(LIBS ${LIBS} framework)
 
 add_subdirectory(Tut01HelloTriangle)
 
 add_subdirectory(Tut02PlayingWithColors)
+
+add_subdirectory(Tut03OpenGLsMovingTriangle)
