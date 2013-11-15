@@ -127,7 +127,7 @@ int main(int argc, char *argv[]) {
 	}
 	glfwMakeContextCurrent(window);
 
-	GLFWframebuffersizefun(reshape);
+	glfwSetFramebufferSizeCallback(window, reshape);
 	glfwSetKeyCallback(window, keyboard);
 
 	glload::LoadFunctions();
