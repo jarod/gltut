@@ -1,3 +1,9 @@
+## Introduction
+
+ * Sample code of [Learning Modern 3D Graphics Programming](http://www.arcsynthesis.org/gltut/)
+ * Replaced GLUT with GLFW3 to do window and context stuff
+ * Replaced premake with cmake to build
+
 ## Dependencies
 
  * GLFW 3.x
