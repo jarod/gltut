@@ -7,6 +7,7 @@
 ## Dependencies
 
  * GLFW 3.x
+ * glsdk 0.5
  * CMake 2.6+
  * C++11 compiler
 
