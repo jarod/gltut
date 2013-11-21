@@ -47,3 +47,5 @@ add_subdirectory(Tut02PlayingWithColors)
 add_subdirectory(Tut03OpenGLsMovingTriangle)
 
 add_subdirectory(Tut04ObjectsAtRest)
+
+add_subdirectory(Tut05ObjectsInDepth)

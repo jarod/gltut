@@ -201,7 +201,6 @@ void reshape (GLFWwindow* window, int w, int h) {
 	glUniformMatrix4fv(perspectiveMatrixUnif, 1, GL_FALSE, perspectiveMatrix);
 	glUseProgram(0);
 
-	printf("w:%d, h:%d\n", w, h);
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
 }
 
