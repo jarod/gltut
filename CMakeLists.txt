@@ -53,3 +53,5 @@ add_subdirectory(Tut05ObjectsInDepth)
 add_subdirectory(Tut06ObjectsInMotion)
 
 add_subdirectory(Tut07WorldInMotion)
+
+add_subdirectory(Tut08GettingOriented)

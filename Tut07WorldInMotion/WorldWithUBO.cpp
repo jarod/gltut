@@ -521,8 +521,7 @@ void reshape (GLFWwindow* window, int w, int h) {
 }
 
 void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods) {
-	switch (key)
-	{
+	switch (key) {
 	case GLFW_KEY_ESCAPE:
 		delete g_pConeMesh;
 		g_pConeMesh = NULL;
@@ -536,32 +535,80 @@ void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods) {
 		g_pPlaneMesh = NULL;
 		glfwSetWindowShouldClose(window, 1);
 		return;
-	case 'w': g_camTarget.z -= 4.0f; break;
-	case 's': g_camTarget.z += 4.0f; break;
-	case 'd': g_camTarget.x += 4.0f; break;
-	case 'a': g_camTarget.x -= 4.0f; break;
-	case 'e': g_camTarget.y -= 4.0f; break;
-	case 'q': g_camTarget.y += 4.0f; break;
-	case 'W': g_camTarget.z -= 0.4f; break;
-	case 'S': g_camTarget.z += 0.4f; break;
-	case 'D': g_camTarget.x += 0.4f; break;
-	case 'A': g_camTarget.x -= 0.4f; break;
-	case 'E': g_camTarget.y -= 0.4f; break;
-	case 'Q': g_camTarget.y += 0.4f; break;
-	case 'i': g_sphereCamRelPos.y -= 11.25f; break;
-	case 'k': g_sphereCamRelPos.y += 11.25f; break;
-	case 'j': g_sphereCamRelPos.x -= 11.25f; break;
-	case 'l': g_sphereCamRelPos.x += 11.25f; break;
-	case 'o': g_sphereCamRelPos.z -= 5.0f; break;
-	case 'u': g_sphereCamRelPos.z += 5.0f; break;
-	case 'I': g_sphereCamRelPos.y -= 1.125f; break;
-	case 'K': g_sphereCamRelPos.y += 1.125f; break;
-	case 'J': g_sphereCamRelPos.x -= 1.125f; break;
-	case 'L': g_sphereCamRelPos.x += 1.125f; break;
-	case 'O': g_sphereCamRelPos.z -= 0.5f; break;
-	case 'U': g_sphereCamRelPos.z += 0.5f; break;
+	case GLFW_KEY_W:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_camTarget.z -= 4.0f;
+		else
+			g_camTarget.z -= 0.4f;
+		break;
+	case GLFW_KEY_S:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_camTarget.z += 4.0f;
+		else
+			g_camTarget.z += 0.4f;
+		break;
+	case GLFW_KEY_D:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_camTarget.x += 4.0f;
+		else
+			g_camTarget.x += 0.4f;
+		break;
+	case GLFW_KEY_A:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_camTarget.x -= 4.0f;
+		else
+			g_camTarget.x -= 0.4f;
+		break;
+	case GLFW_KEY_E:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_camTarget.y -= 4.0f;
+		else
+			g_camTarget.y -= 0.4f;
+		break;
+	case GLFW_KEY_Q:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_camTarget.y += 4.0f;
+		else
+			g_camTarget.y += 0.4f;
+		break;
+	case GLFW_KEY_I:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_sphereCamRelPos.y -= 11.25f;
+		else
+			g_sphereCamRelPos.y -= 1.125f;
+		break;
+	case GLFW_KEY_K:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_sphereCamRelPos.y += 11.25f;
+		else
+			g_sphereCamRelPos.y += 1.125f;
+		break;
+	case GLFW_KEY_J:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_sphereCamRelPos.x -= 11.25f;
+		else
+			g_sphereCamRelPos.x -= 1.125f;
+		break;
+	case GLFW_KEY_L:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_sphereCamRelPos.x += 11.25f;
+		else
+			g_sphereCamRelPos.x += 1.125f;
+		break;
+	case GLFW_KEY_O:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_sphereCamRelPos.z -= 5.0f;
+		else
+			g_sphereCamRelPos.z -= 0.5f;
+		break;
+	case GLFW_KEY_U:
+		if (mods & GLFW_MOD_SHIFT == 0)
+			g_sphereCamRelPos.z += 5.0f;
+		else
+			g_sphereCamRelPos.z += 0.5f;
+		break;
 		
-	case 32:
+	case GLFW_KEY_SPACE:
 		g_bDrawLookatPoint = !g_bDrawLookatPoint;
 		printf("Target: %f, %f, %f\n", g_camTarget.x, g_camTarget.y, g_camTarget.z);
 		printf("Position: %f, %f, %f\n", g_sphereCamRelPos.x, g_sphereCamRelPos.y, g_sphereCamRelPos.z);

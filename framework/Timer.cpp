@@ -2,7 +2,7 @@
 
 #include <math.h>
 #include <glm/glm.hpp>
-#include <GL/freeglut.h>
+#include <GLFW/glfw3.h>
 #include "framework.h"
 #include "Timer.h"
 
@@ -44,9 +44,8 @@ namespace Framework
 		m_isPaused = pause;
 	}
 
-	bool Timer::Update()
-	{
-		float absCurrTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0f;
+	bool Timer::Update() {
+		float absCurrTime = glfwGetTime();
 		if(!m_hasUpdated)
 		{
 			m_absPrevTime = absCurrTime;
